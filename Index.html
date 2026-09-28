@@ -1,0 +1,1188 @@
+<html lang="en">
+<head>
+<meta aw
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌱 Smart Organic Farming AI</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#e8f5e9,#f7fff8);
+    color:#173b22;
+    padding-bottom:80px;
+}
+
+.header{
+    background:linear-gradient(135deg,#126b35,#42a85f);
+    color:white;
+    padding:24px 18px;
+    border-radius:0 0 28px 28px;
+    box-shadow:0 5px 18px rgba(0,0,0,.18);
+}
+
+.header h1{
+    font-size:25px;
+}
+
+.header p{
+    margin-top:7px;
+}
+
+.container{
+    width:94%;
+    max-width:900px;
+    margin:auto;
+}
+
+.search{
+    width:100%;
+    padding:15px;
+    margin:16px 0;
+    border:0;
+    border-radius:16px;
+    font-size:16px;
+    box-shadow:0 4px 14px rgba(0,0,0,.12);
+    outline:none;
+}
+
+.card{
+    background:white;
+    padding:19px;
+    margin:15px 0;
+    border-radius:20px;
+    box-shadow:0 4px 15px rgba(0,0,0,.10);
+}
+
+.card h2{
+    color:#16733a;
+    margin-bottom:9px;
+}
+
+.welcome{
+    background:linear-gradient(135deg,#dff5e3,#ffffff);
+}
+
+.tip{
+    border-left:5px solid #198754;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    margin-top:15px;
+}
+
+.feature{
+    background:white;
+    padding:19px 8px;
+    text-align:center;
+    border-radius:19px;
+    box-shadow:0 4px 13px rgba(0,0,0,.10);
+    cursor:pointer;
+    transition:.2s;
+}
+
+.feature:active{
+    transform:scale(.95);
+}
+
+.icon{
+    display:block;
+    font-size:36px;
+    margin-bottom:8px;
+}
+
+.page{
+    display:none;
+}
+
+.page.active{
+    display:block;
+}
+
+button{
+    cursor:pointer;
+}
+
+.action{
+    background:#198754;
+    color:white;
+    border:0;
+    padding:12px 18px;
+    border-radius:11px;
+    margin-top:8px;
+    font-size:15px;
+}
+
+.back{
+    background:#176b37;
+    color:white;
+    border:0;
+    padding:11px 18px;
+    border-radius:11px;
+    margin:15px 0;
+}
+
+input,select,textarea{
+    width:100%;
+    padding:13px;
+    margin:8px 0;
+    border:1px solid #ccc;
+    border-radius:11px;
+    font-size:15px;
+}
+
+.result{
+    background:#edf8ef;
+    padding:15px;
+    border-radius:14px;
+    margin-top:12px;
+    line-height:1.6;
+}
+
+.bottom{
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    height:70px;
+    background:white;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    box-shadow:0 -4px 15px rgba(0,0,0,.15);
+    z-index:100;
+}
+
+.bottom button{
+    background:white;
+    border:0;
+    color:#176b37;
+    font-size:12px;
+}
+
+.bottom span{
+    display:block;
+    font-size:23px;
+    margin-bottom:3px;
+}/* LOGIN DESIGN */
+
+#loginScreen{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:linear-gradient(135deg,#126b35,#7acb7a);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    z-index:9999;
+}
+
+.loginBox{
+    width:100%;
+    max-width:380px;
+    background:white;
+    padding:30px 25px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+.loginLogo{
+    font-size:60px;
+}
+
+.loginBox h1{
+    color:#176b37;
+    margin:10px 0;
+}
+
+.loginBox p{
+    color:#666;
+    margin-bottom:20px;
+}
+
+.loginBox input{
+    width:100%;
+    padding:14px;
+    margin:8px 0;
+    border:1px solid #ccc;
+    border-radius:12px;
+    font-size:16px;
+}
+
+.loginBtn{
+    width:100%;
+    padding:14px;
+    margin-top:10px;
+    background:#198754;
+    color:white;
+    border:0;
+    border-radius:12px;
+    font-size:17px;
+    font-weight:bold;
+}
+
+#loginMessage{
+    margin-top:12px;
+    font-weight:bold;
+  }
+</style>
+</head>
+
+<>
+
+<!-- HEADER -->
+
+<div class="header">
+    <h1>🌱 Smart Organic Farming AI</h1>
+    <p>Grow naturally • Farm intelligently • Earn better</p>
+</div>
+
+
+<div class="container">
+
+<!-- SEARCH -->
+
+<input
+    id="search"
+    class="search"
+    type="text"
+    placeholder="🔍 Search Crop, Weather, Pest..."
+    onkeyup="searchFeature()"
+>
+
+
+<!-- ================= HOME ================= -->
+
+<div id="home" class="page active">
+
+<div class="card welcome">
+
+<h2 id="welcomeText">👨‍🌾 Welcome Farmer!</h2>
+
+<p>
+Your smart assistant for organic and sustainable farming.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>📅 Today's Date</h2>
+
+<p id="date"></p>
+
+</div>
+
+
+<div class="card tip">
+
+<h2>💡 Today's Farming Tip</h2>
+
+<p>
+Healthy soil creates healthy crops.
+Use compost and organic manure to improve soil health naturally.
+</p>
+<button class="action" onclick="alert('HELLO')">
+🔊 Read Aloud
+</button>
+
+function speak(text){
+
+    alert("Speak function reached");
+
+}
+</div>
+
+
+<h2 style="margin-top:20px;">🚜 AI Farming Features</h2>
+
+
+<div class="grid">
+
+<div class="feature" onclick="openPage('crop')">
+<span class="icon">🌱</span>
+<b>Crop Guide</b>
+</div>
+
+<div class="feature" onclick="openPage('weather')">
+<span class="icon">🌦️</span>
+<b>Weather AI</b>
+</div>
+
+<div class="feature" onclick="openPage('pest')">
+<span class="icon">🐛</span>
+<b>Pest Detection</b>
+</div>
+
+<div class="feature" onclick="openPage('disease')">
+<span class="icon">🦠</span>
+<b>Disease Detection</b>
+</div>
+
+<div class="feature" onclick="openPage('fertilizer')">
+<span class="icon">🧪</span>
+<b>Fertilizer AI</b>
+</div>
+
+<div class="feature" onclick="openPage('market')">
+<span class="icon">💰</span>
+<b>Market Price</b>
+</div>
+
+<div class="feature" onclick="openPage('marketplace')">
+<span class="icon">🛒</span>
+<b>Marketplace</b>
+</div>
+
+<div class="feature" onclick="openPage('scheme')">
+<span class="icon">🏛️</span>
+<b>Government Schemes</b>
+</div>
+
+<div class="feature" onclick="openPage('community')">
+<span class="icon">👥</span>
+<b>Community</b>
+</div>
+
+<div class="feature" onclick="openPage('profile')">
+<span class="icon">👤</span>
+<b>Profile</b>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ================= CROP ================= -->
+
+<div id="crop" class="page">
+
+<button class="back" onclick="openPage('home')">← Back</button>
+
+<div class="card">
+
+<h2>🌱 AI Crop Guide</h2>
+
+<select id="cropSelect">
+
+<option value="">Select Crop</option>
+<option>Tomato</option>
+<option>Onion</option>
+<option>Potato</option>
+<option>Wheat</option>
+<option>Rice</option>
+<option>Cotton</option>
+<option>Chilli</option>
+<option>Carrot</option>
+
+</select>
+
+<button class="action" onclick="cropAI()">
+🤖 Get AI Advice
+</button>
+
+<div id="cropResult"></div>
+
+</div>
+
+</div>
+
+
+<!-- ================= WEATHER ================= -->
+
+<div id="weather" class="page">
+
+<button class="back" onclick="openPage('home')">← Back</button>
+
+<div class="card">
+
+<h2>🌦️ Weather AI</h2>
+
+<input id="city" placeholder="Enter your city">
+
+<button class="action" onclick="weatherAI()">
+🌦️ Check Weather
+</button>
+
+<div id="weatherResult"></div>
+
+</div>
+
+</div>
+
+
+<!-- ================= PEST ================= -->
+
+<div id="pest" class="page">
+
+<button class="back" onclick="openPage('home')">← Back</button>
+
+<div class="card">
+
+<h2>🐛 AI Pest Detection</h2>
+
+<p>Select a crop image.</p>
+
+<input
+    id="pestImage"
+    type="file"
+    accept="image/*"
+>
+
+<button class="action" onclick="pestAI()">
+🤖 Analyze Image
+</button>
+
+<div id="pestResult"></div>
+
+</div>
+
+</div>
+
+
+<!-- ================= DISEASE ================= -->
+
+<div id="disease" class="page">
+
+<button class="back" onclick="openPage('home')">← Back</button>
+
+<div class="card">
+
+<h2>🦠 AI Disease Detection</h2>
+
+<p>Select a leaf image.</p>
+
+<input
+    id="diseaseImage"
+    type="file"
+    accept="image/*"
+>
+
+<button class="action" onclick="diseaseAI()">
+🔬 Detect Disease
+</button>
+
+<div id="diseaseResult"></div>
+
+</div>
+
+</div>
+
+
+<!-- ================= FERTILIZER ================= -->
+
+<div id="fertilizer" class="page">
+
+<button class="back" onclick="openPage('home')">← Back</button>
+
+<div class="card">
+
+<h2>🧪 Smart Fertilizer AI</h2>
+
+<select id="soil">
+
+<option value="">Select Soil</option>
+<option>Black Soil</option>
+<option>Red Soil</option>
+<option>Alluvial Soil</option>
+<option>Sandy Soil</option>
+
+</select>
+
+<select id="fertCrop">
+
+<option>Tomato</option>
+<option>Wheat</option>
+<option>Rice</option>
+<option>Onion</option>
+
+</select>
+
+<button class="action" onclick="fertAI()">
+🤖 Generate Advice
+</button>
+
+<div id="fertResult"></div>
+
+</div>
+
+</div>
+
+
+<!-- ================= MARKET ================= -->
+
+<div id="market" class="page">
+
+<button class="back" onclick="openPage('home')">← Back</button>
+
+<div class="card">
+
+<h2>💰 Market Price</h2>
+
+<select id="marketCrop">
+
+<option>Tomato</option>
+<option>Onion</option>
+<option>Potato</option>
+<option>Wheat</option>
+<option>Cotton</option>
+
+</select>
+
+<button class="action" onclick="marketAI()">
+📈 Check Price
+</button>
+
+<div id="marketResult"></div>
+
+</div>
+
+</div>
+
+
+<!-- ================= MARKETPLACE ================= -->
+
+<div id="marketplace" class="page">
+
+<button class="back" onclick="openPage('home')">← Back</button>
+
+<div class="card">
+
+<h2>🛒 Farmer Marketplace</h2>
+
+<input id="product" placeholder="Product name">
+
+<input id="price" placeholder="Price">
+
+<button class="action" onclick="addProduct()">
+➕ Add Product
+</button>
+
+</div>
+
+<div id="productList"></div>
+
+</div>
+
+
+<!-- ================= SCHEMES ================= -->
+
+<div id="scheme" class="page">
+
+<button class="back" onclick="openPage('home')">← Back</button>
+
+<div class="card">
+
+<h2>🏛️ Government Schemes</h2>
+
+<div class="result">
+<b>🌾 PM-KISAN</b>
+<br>
+Financial support for eligible farmers.
+</div>
+
+<div class="result">
+<b>💧 PM Krishi Sinchayee Yojana</b>
+<br>
+Supports irrigation and water management.
+</div>
+
+<div class="result">
+<b>🌱 Soil Health Card</b>
+<br>
+Provides soil nutrient information.
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ================= COMMUNITY ================= -->
+
+<div id="community" class="page">
+
+<button class="back" onclick="openPage('home')">← Back</button>
+
+<div class="card">
+
+<h2>👥 Farmer Community</h2>
+
+<textarea
+id="post"
+rows="5"
+placeholder="Share your farming experience..."
+></textarea>
+
+<button class="action" onclick="post()">
+📢 Publish Post
+</button>
+
+</div>
+
+<div id="posts"></div>
+
+</div>
+
+
+<!-- ================= PROFILE ================= -->
+
+<div id="profile" class="page">
+
+<button class="back" onclick="openPage('home')">← Back</button>
+
+<div class="card">
+
+<h2>👤 Farmer Profile</h2>
+
+<p>🌱 Organic Farmer</p>
+
+<br>
+
+<h3>🌍 Language</h3>
+
+<select onchange="language(this.value)">
+
+<option value="en">English</option>
+<option value="mr">मराठी</option>
+<option value="hi">हिन्दी</option>
+
+</select>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ================= BOTTOM NAV ================= -->
+
+<div class="bottom">
+
+<button onclick="openPage('home')">
+<span>🏠</span>
+Home
+</button>
+
+<button onclick="openPage('crop')">
+<span>🌱</span>
+Crop
+</button>
+
+<button onclick="openPage('weather')">
+<span>🌦️</span>
+Weather
+</button>
+
+<button onclick="openPage('marketplace')">
+<span>🛒</span>
+Market
+</button>
+
+<button onclick="openPage('profile')">
+<span>👤</span>
+Profile
+</button>
+
+</div>
+
+
+<script>
+
+/* DATE */
+
+document.getElementById("date").innerHTML =
+new Date().toLocaleDateString("en-IN",{
+    weekday:"long",
+    year:"numeric",
+    month:"long",
+    day:"numeric"
+});
+
+
+/* PAGE OPEN */
+
+function openPage(page){
+
+    let pages=document.querySelectorAll(".page");
+
+    pages.forEach(function(p){
+        p.classList.remove("active");
+    });
+
+    document.getElementById(page).classList.add("active");
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+}
+
+
+/* SEARCH */
+
+function searchFeature(){
+
+    let text=document
+        .getElementById("search")
+        .value
+        .toLowerCase();
+
+    if(text.includes("crop") ||
+       text.includes("पिक") ||
+       text.includes("फसल")){
+
+        openPage("crop");
+
+    }
+
+    else if(text.includes("weather") ||
+            text.includes("हवामान") ||
+            text.includes("मौसम")){
+
+        openPage("weather");
+
+    }
+
+    else if(text.includes("pest") ||
+            text.includes("किड") ||
+            text.includes("कीट")){
+
+        openPage("pest");
+
+    }
+
+    else if(text.includes("disease") ||
+            text.includes("रोग")){
+
+        openPage("disease");
+
+    }
+
+    else if(text.includes("fertilizer") ||
+            text.includes("खत")){
+
+        openPage("fertilizer");
+
+    }
+
+    else if(text.includes("market") ||
+            text.includes("price") ||
+            text.includes("बाजार")){
+
+        openPage("market");
+
+    }
+
+    else if(text.includes("scheme") ||
+            text.includes("योजना")){
+
+        openPage("scheme");
+
+    }
+
+    else if(text.includes("community")){
+
+        openPage("community");
+
+    }
+
+    else if(text.includes("profile")){
+
+        openPage("profile");
+
+    }
+
+}
+
+
+/* CROP AI */
+
+function cropAI(){
+
+    let crop=document.getElementById("cropSelect").value;
+
+    if(crop===""){
+        document.getElementById("cropResult").innerHTML=
+        "<div class='result'>⚠️ Please select a crop.</div>";
+        return;
+    }
+
+    let advice={
+
+        Tomato:
+        "🍅 Use compost-rich soil, good sunlight and controlled irrigation.",
+
+        Onion:
+        "🧅 Use loose, well-drained soil and moderate irrigation.",
+
+        Potato:
+        "🥔 Use well-drained soil and organic compost.",
+
+        Wheat:
+        "🌾 Maintain suitable irrigation and healthy soil.",
+
+        Rice:
+        "🌾 Manage water carefully and monitor nutrient needs.",
+
+        Cotton:
+        "🌿 Regularly inspect plants for pests.",
+
+        Chilli:
+        "🌶️ Use organic compost and maintain good drainage.",
+
+        Carrot:
+        "🥕 Use loose soil and avoid fresh manure immediately before planting."
+
+    };
+
+    document.getElementById("cropResult").innerHTML=
+    "<div class='result'><b>🤖 AI Advice</b><br><br>"+
+    advice[crop]+"</div>";
+}
+
+
+/* WEATHER */
+
+function weatherAI(){
+
+    let city=document.getElementById("city").value.trim();
+
+    if(city===""){
+        alert("Enter your city.");
+        return;
+    }
+
+    document.getElementById("weatherResult").innerHTML=
+
+    "<div class='result'>"+
+    "<h3>🌦️ Weather Information</h3>"+
+    "<p>📍 "+city+"</p>"+
+    "<p>🌡️ Temperature: 28°C</p>"+
+    "<p>💧 Humidity: 65%</p>"+
+    "<p>☁️ Partly Cloudy</p>"+
+    "<br><b>🤖 Farming Advice:</b><br>"+
+    "Check actual local weather before irrigation or spraying."+
+    "</div>";
+}
+
+
+/* PEST */
+
+function pestAI(){
+
+    let image=document.getElementById("pestImage").files[0];
+
+    if(!image){
+        alert("Please select an image.");
+        return;
+    }
+
+    document.getElementById("pestResult").innerHTML=
+
+    "<div class='result'>"+
+    "<h3>🤖 Pest Detection</h3>"+
+    "<p>✅ Image received.</p>"+
+    "<p>Possible issue: common leaf-eating pest.</p>"+
+    "<p>Inspect the crop carefully and use an appropriate approved organic control if needed.</p>"+
+    "</div>";
+}
+
+
+/* DISEASE */
+
+function diseaseAI(){
+
+    let image=document.getElementById("diseaseImage").files[0];
+
+    if(!image){
+        alert("Please select an image.");
+        return;
+    }
+
+    document.getElementById("diseaseResult").innerHTML=
+
+    "<div class='result'>"+
+    "<h3>🔬 Disease Detection</h3>"+
+    "<p>✅ Image received.</p>"+
+    "<p>Possible issue: leaf-spot-like symptoms.</p>"+
+    "<p>For an accurate diagnosis, consult an agricultural expert.</p>"+
+    "</div>";
+}
+
+
+/* FERTILIZER */
+
+function fertAI(){
+
+    let soil=document.getElementById("soil").value;
+    let crop=document.getElementById("fertCrop").value;
+
+    if(soil===""){
+        alert("Please select soil.");
+        return;
+    }
+
+    document.getElementById("fertResult").innerHTML=
+
+    "<div class='result'>"+
+    "<h3>🧪 AI Fertilizer Advice</h3>"+
+    "<p><b>Crop:</b> "+crop+"</p>"+
+    "<p><b>Soil:</b> "+soil+"</p>"+
+    "<br>"+
+    "Start with soil testing and use well-decomposed compost or suitable organic nutrient sources based on soil-test results."+
+    "</div>";
+}
+
+
+/* MARKET */
+
+function marketAI(){
+
+    let crop=document.getElementById("marketCrop").value;
+
+    let prices={
+
+        Tomato:"₹25 – ₹40/kg",
+        Onion:"₹20 – ₹35/kg",
+        Potato:"₹18 – ₹30/kg",
+        Wheat:"₹25 – ₹35/kg",
+        Cotton:"₹6,500 – ₹8,000/quintal"
+
+    };
+
+    document.getElementById("marketResult").innerHTML=
+
+    "<div class='result'>"+
+    "<h3>📈 "+crop+"</h3>"+
+    "<p><b>Demo price:</b> "+prices[crop]+"</p>"+
+    "<br>⚠️ Actual prices vary by market and date."+
+    "</div>";
+}
+
+
+/* MARKETPLACE */
+
+function addProduct(){
+
+    let product=document.getElementById("product").value.trim();
+
+    let price=document.getElementById("price").value.trim();
+
+    if(product==="" || price===""){
+        alert("Enter product and price.");
+        return;
+    }
+
+    let item=document.createElement("div");
+
+    item.className="card";
+
+    item.innerHTML=
+
+    "<h2>🛒 "+product+"</h2>"+
+    "<p>💰 Price: ₹"+price+"</p>"+
+    "<button class='action'>📞 Contact Seller</button>";
+
+    document.getElementById("productList")
+    .prepend(item);
+
+    document.getElementById("product").value="";
+    document.getElementById("price").value="";
+}
+
+
+/* COMMUNITY */
+
+function post(){
+
+    let text=document.getElementById("post").value.trim();
+
+    if(text===""){
+        alert("Write something first.");
+        return;
+    }
+
+    let item=document.createElement("div");
+
+    item.className="card";
+
+    item.innerHTML=
+    "<h3>👨‍🌾 Farmer</h3>"+
+    "<p>"+text+"</p>"+
+    "<small>Posted just now</small>";
+
+    document.getElementById("posts")
+    .prepend(item);
+
+    document.getElementById("post").value="";
+}
+
+
+/* VOICE */
+
+function speak(text){
+
+    alert("Read Aloud button clicked");
+
+    if(!('speechSynthesis' in window)){
+        alert("Speech not supported on this device");
+        return;
+    }
+
+    let speech = new SpeechSynthesisUtterance(text);
+    speech.lang = "en-US";
+
+    window.speechSynthesis.speak(speech);
+      }
+
+
+/* LANGUAGE */
+
+function language(lang){
+
+    if(lang==="mr"){
+        alert("मराठी भाषा निवडली आहे 🌱");
+    }
+
+    else if(lang==="hi"){
+        alert("हिन्दी भाषा चुनी गई है 🌱");
+    }
+
+    else{
+        alert("English language selected 🌱");
+    }
+}
+/* LOGIN */
+
+function loginUser(){
+
+    let name = document.getElementById("loginName").value.trim();
+
+    let mobile = document.getElementById("loginMobile").value.trim();
+
+    let message = document.getElementById("loginMessage");
+
+    if(name === ""){
+        message.style.color = "red";
+        message.innerHTML = "Please enter your name.";
+        return;
+    }
+
+    if(!/^[0-9]{10}$/.test(mobile)){
+        message.style.color = "red";
+        message.innerHTML = "Please enter a valid 10-digit mobile number.";
+        return;
+    }
+
+    localStorage.setItem("farmerName",name);
+
+    message.style.color = "#198754";
+    message.innerHTML = "✅ Login successful!";localStorage.setItem("farmerName", name);
+
+    setTimeout(function(){
+
+        document.getElementById("loginScreen").style.display = "none";
+
+    },800);
+  }
+  function loginUser(){
+
+    let name = document.getElementById("loginName").value.trim();
+    let mobile = document.getElementById("loginMobile").value.trim();
+    let message = document.getElementById("loginMessage");
+
+    if(name === ""){
+        message.innerHTML = "Please enter your name.";
+        message.style.color = "red";
+        return;
+    }
+
+    if(!/^[0-9]{10}$/.test(mobile)){
+        message.innerHTML = "Please enter a valid 10-digit mobile number.";
+        message.style.color = "red";
+        return;
+    }
+
+    message.innerHTML = "✅ Login successful!";
+    message.style.color = "green";
+
+    setTimeout(function(){
+        document.getElementById("loginScreen").style.display = "none";
+    }, 800);
+}
+    window.onload = function(){
+
+    let farmerName = localStorage.getItem("farmerName");
+
+    if(farmerName){
+        document.getElementById("welcomeText").innerHTML =
+        "👨‍🌾 Welcome " + farmerName + "!";
+    }
+
+          }
+</script>
+
+
+<!-- LOGIN SCREEN -->
+
+<div id="loginScreen">
+
+    <div class="loginBox">
+
+        <div cla
+  
+<!-- LOGIN SCREEN -->
+
+<div id="loginScreen">
+
+    <div class="loginBox">
+
+        <div class="loginLogo">🌱</div>
+
+        <h1>Smart Organic Farming AI</h1>
+
+        <p>Welcome Farmer! 👨‍🌾</p>
+
+        <input
+            type="text"
+            id="loginName"
+            placeholder="Enter your name"
+        >
+
+        <input
+    type="tel"
+    id="loginMobile"
+    placeholder="Enter mobile number"
+>
+
+<button
+    class="loginBtn"
+    onclick="loginUser()"
+>
+🌱 Login
+</button>
+
+<p id="loginMessage"></p>
+
+</div>
+
+</div>
+<script src="Script.js"></script>
+</body>
+</html>

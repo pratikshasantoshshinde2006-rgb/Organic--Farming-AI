@@ -1,0 +1,179 @@
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#fff3e0,#e8f5e9);
+    margin:0;
+    padding:20px;
+    text-align:center;
+    color:#333;
+}
+
+h1{
+    color:#2e7d32;
+    font-size:35px;
+}
+
+h2{
+    color:#555;
+}
+
+
+.container{
+    max-width:500px;
+    margin:auto;
+}
+
+
+.card{
+    background:#e8f5e9;
+    margin:15px auto;
+    padding:20px;
+    width:85%;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+
+a{
+    text-decoration:none;
+    display:inline-block;
+    margin:10px;
+}
+
+
+button{
+    width:250px;
+    padding:15px;
+    border:none;
+    border-radius:25px;
+    font-size:18px;
+    font-weight:bold;
+    color:white;
+    cursor:pointer;
+    box-shadow:0 5px 10px rgba(0,0,0,0.2);
+}
+a[href="index.html"] button{
+    background: linear-gradient(135deg,#FFD6E8,#E6E6FA,#D6F5FF);
+    color:#444;
+    border:1px solid white;
+    box-shadow:0 0 10px rgba(255,255,255,0.8),
+               0 0 20px rgba(255,255,255,0.5);
+}
+
+
+/* Different button colours */
+
+a:nth-child(1) button{
+    background:#4CAF50;
+}
+
+a:nth-child(2) button{
+    background:#2196F3;
+}
+
+a:nth-child(3) button{
+    background:#FF9800;
+}
+
+a:nth-child(4) button{
+    background:#9C27B0;
+}
+
+
+button:hover{
+    transform:scale(1.05);
+}
+
+
+input,textarea{
+    padding:12px;
+    border-radius:10px;
+    border:1px solid #ccc;
+}
+a[href="Fertilizer.html"] button{
+    background:#4CAF50;
+}
+a[href="Pest.html"] button{
+    background:#F44336;
+}
+a[href="Community.html"] button{
+    background:#009688;
+}
+a[href="Settings.html"] button{
+    background:#673AB7;
+}
+a[href="Crops.html"] button{
+    background:#FF9800;
+}
+a[href="Weather.html"] button{
+    background:#2196F3;
+}
+a[href="Marketplace.html"] button{
+    background:#E91E63;
+}
+a[href="Marketprice.html"] button{
+    background:#FFC107;
+}
+a[href="Disease.html"] button{
+    background:#9C27B0;
+}
+a[href="Scheme.html"] button{
+    background:#795548;
+}
+a[href="Profile.html"] button{
+    background:#00BCD4;
+}
+button:hover{
+    transform:scale(1.05);
+    transition:0.3s;
+}
+input{
+    width:80%;
+    padding:15px;
+    font-size:16px;
+    border-radius:20px;
+    border:2px solid #4CAF50;
+outline:none;
+}
+#topBtn{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    border-radius: 50px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    font-weight: bold;
+}
+.search-box button{
+    background:#3F51B5;
+    color:white;
+}
+.contact {
+    color: gold;
+}
+.listen-btn,
+.voice-btn,
+.sms-btn{
+    display:block;
+    width:80%;
+    margin:15px auto;
+    padding:15px;
+    border:none;
+    border-radius:25px;
+    font-size:18px;
+    font-weight:bold;
+    color:white;
+}
+
+.listen-btn{
+    background:green !important;
+}
+
+.voice-btn{
+    background:orange !important;
+}
+
+.sms-btn{
+    background:purple !important;
+}
