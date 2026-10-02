@@ -295,15 +295,10 @@ Your smart assistant for organic and sustainable farming.
 Healthy soil creates healthy crops.
 Use compost and organic manure to improve soil health naturally.
 </p>
-<button class="action" onclick="alert('HELLO')">
+<button class="action" onclick="speak('Healthy soil creates healthy crops. Use compost and organic manure to improve soil health naturally.')">
 🔊 Read Aloud
 </button>
 
-function speak(text){
-
-    alert("Speak function reached");
-
-}
 </div>
 
 
@@ -1181,8 +1176,21 @@ function loginUser(){
 <p id="loginMessage"></p>
 
 </div>
+  <div id="google_translate_element"></div>
 
 </div>
 <script src="Script.js"></script>
+          <script type="text/javascript">
+function googleTranslateElementInit() {
+new google.translate.TranslateElement(
+{
+pageLanguage: 'en'
+},
+'google_translate_element'
+);
+}
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
